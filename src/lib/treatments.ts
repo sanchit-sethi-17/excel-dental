@@ -6,9 +6,11 @@ import {
   Baby,
   CircleDot,
   Crown,
+  Layers,
   ShieldCheck,
-  Sparkle,
+  Smile,
   Stethoscope,
+  Zap,
 } from "lucide-react";
 
 export type Faq = { q: string; a: string };
@@ -19,217 +21,186 @@ export type Treatment = {
   name: string;
   shortName: string;
   icon: LucideIcon;
-  /** One-line card copy */
+  image: string;
+  imageAlt: string;
+  /** One-line card copy — short and clinical */
   excerpt: string;
-  /** Hero paragraph on the detail page */
+  /** Two-sentence intro on the detail page */
   intro: string;
   benefits: string[];
   process: ProcessStep[];
   faqs: Faq[];
-  /** Small factual chips shown under the detail hero */
   facts: { label: string; value: string }[];
 };
 
 export const focusTreatments: Treatment[] = [
   {
-    slug: "root-canal-treatment",
-    name: "Root Canal Treatment",
-    shortName: "Root Canal",
-    icon: Activity,
-    excerpt:
-      "Gentle, single-visit-where-possible root canal therapy that saves your natural tooth and ends the pain.",
-    intro:
-      "A root canal removes infected tissue from inside the tooth, relieves pain, and preserves the natural tooth — almost always the better outcome compared to extraction. At Excel Dental, root canal treatment is performed under local anaesthesia with rotary instrumentation and apex locators for precise, comfortable therapy.",
-    benefits: [
-      "Relieves toothache at its source instead of masking it",
-      "Preserves your natural tooth and bite",
-      "Local anaesthesia and modern rotary technique for comfort",
-      "Single-visit treatment where clinically suitable",
-      "Finished with a crown for long-term protection",
-    ],
-    process: [
-      {
-        title: "Diagnosis & X-ray",
-        detail:
-          "We examine the tooth, take a digital X-ray, and confirm whether root canal therapy is the right treatment — and explain exactly why.",
-      },
-      {
-        title: "Comfortable anaesthesia",
-        detail:
-          "The tooth is fully numbed. Most patients describe the procedure as no more uncomfortable than a routine filling.",
-      },
-      {
-        title: "Cleaning & shaping",
-        detail:
-          "Infected pulp is removed and the canals are cleaned, shaped, and disinfected using rotary instruments.",
-      },
-      {
-        title: "Sealing",
-        detail:
-          "The canals are sealed with a biocompatible filling material to prevent re-infection.",
-      },
-      {
-        title: "Crown & follow-up",
-        detail:
-          "A crown restores full strength to the treated tooth. We review healing at your follow-up visit.",
-      },
-    ],
-    faqs: [
-      {
-        q: "Is a root canal painful?",
-        a: "With modern anaesthesia and rotary technique, the procedure itself is comfortable — most patients feel pressure, not pain. The toothache you came in with is what the treatment removes.",
-      },
-      {
-        q: "How many visits will I need?",
-        a: "Many root canals can be completed in a single visit. Complex or heavily infected teeth may need two to three shorter visits. We'll tell you the plan before we begin.",
-      },
-      {
-        q: "Do I really need a crown afterwards?",
-        a: "In most cases, yes. A root-canal-treated tooth becomes more brittle over time, and a crown protects it so it can last for many years.",
-      },
-      {
-        q: "What happens if I delay treatment?",
-        a: "Infection inside a tooth doesn't resolve on its own. Delaying usually means more pain, possible swelling or abscess, and a higher chance the tooth can no longer be saved.",
-      },
-    ],
-    facts: [
-      { label: "Anaesthesia", value: "Local" },
-      { label: "Visits", value: "1–3" },
-      { label: "Goal", value: "Save the natural tooth" },
-    ],
-  },
-  {
     slug: "dental-implants",
     name: "Dental Implants",
     shortName: "Implants",
     icon: Anchor,
-    excerpt:
-      "Permanent, natural-feeling replacement for missing teeth — planned precisely, placed gently.",
+    image: "https://images.unsplash.com/photo-1593022356769-11f762e25ed9?auto=format&fit=crop&w=1600&q=80",
+    imageAlt: "Dental implant model showing a titanium post and crown",
+    excerpt: "A permanent, natural-looking replacement for missing teeth.",
     intro:
-      "A dental implant is a small titanium post that replaces the root of a missing tooth, topped with a crown that looks and functions like your own. Implants protect the jawbone, don't rely on neighbouring teeth, and with good care can last decades. As an implant centre, this is at the heart of what we do.",
+      "A dental implant is a titanium post that replaces the root of a missing tooth, restored with a crown matched to your natural teeth. Implants restore normal function and help preserve the surrounding jawbone.",
     benefits: [
-      "Closest replacement to a natural tooth in look, feel, and function",
-      "Preserves jawbone that would otherwise shrink after tooth loss",
-      "No grinding down of healthy neighbouring teeth (unlike bridges)",
-      "Eat, speak, and smile without slipping dentures",
-      "Decades of service with routine care",
+      "Looks and functions like a natural tooth",
+      "Preserves the jawbone after tooth loss",
+      "Does not rely on or alter neighbouring teeth",
+      "A long-lasting solution with routine care",
     ],
     process: [
       {
         title: "Assessment & planning",
         detail:
-          "Clinical examination and imaging let us assess bone quality and plan the implant position precisely before anything else happens.",
+          "Examination and imaging confirm bone quality and the correct implant position.",
       },
       {
         title: "Implant placement",
-        detail:
-          "The titanium implant is placed in the jaw under local anaesthesia — a shorter and calmer appointment than most patients expect.",
+        detail: "The implant is placed in the jaw under local anaesthesia.",
       },
       {
-        title: "Healing & integration",
+        title: "Healing",
         detail:
-          "Over the following weeks the bone bonds with the implant (osseointegration), creating a foundation as stable as a natural root.",
+          "The bone integrates with the implant over the following weeks to form a stable foundation.",
       },
       {
-        title: "Crown placement",
+        title: "Crown fitting",
         detail:
-          "A custom crown, matched to your natural teeth, is fixed onto the implant. Bite and fit are checked and refined.",
-      },
-      {
-        title: "Long-term care",
-        detail:
-          "Implants are maintained like natural teeth — good hygiene and periodic reviews keep them healthy for the long run.",
+          "A custom crown is fixed onto the implant and the bite is checked.",
       },
     ],
     faqs: [
       {
-        q: "Am I a candidate for implants?",
-        a: "Most healthy adults with a missing tooth are. Bone volume, gum health, and general health are assessed first — if an implant isn't the right choice for you, we'll say so and discuss alternatives honestly.",
+        q: "Am I suitable for an implant?",
+        a: "Most healthy adults with a missing tooth are. Bone volume and gum health are assessed first, and we advise honestly if an alternative is more appropriate.",
       },
       {
-        q: "How long does the whole process take?",
-        a: "Typically two to four months from placement to final crown, most of which is quiet healing time. Some cases qualify for faster protocols.",
-      },
-      {
-        q: "Is implant placement painful?",
-        a: "The procedure is done under local anaesthesia and most patients report less discomfort than a tooth extraction. Mild soreness for a few days is normal and manageable.",
+        q: "How long does treatment take?",
+        a: "Typically two to four months from placement to the final crown, most of which is healing time.",
       },
       {
         q: "How long do implants last?",
-        a: "With good oral hygiene and regular check-ups, implants routinely last 15–25 years and often a lifetime. The crown on top may be replaced after 10–15 years of wear.",
+        a: "With good hygiene and regular reviews, implants can last many years, often decades.",
       },
     ],
     facts: [
       { label: "Material", value: "Titanium" },
       { label: "Timeline", value: "2–4 months" },
-      { label: "Feels like", value: "A natural tooth" },
+      { label: "Anaesthesia", value: "Local" },
     ],
   },
   {
-    slug: "orthodontic-treatment",
-    name: "Orthodontic Treatment",
-    shortName: "Orthodontics",
-    icon: AlignCenterVertical,
-    excerpt:
-      "Braces and clear aligners that straighten teeth and correct your bite — for children, teens, and adults.",
+    slug: "root-canal-treatment",
+    name: "Root Canal Treatment",
+    shortName: "Root Canal",
+    icon: Activity,
+    image: "https://images.unsplash.com/photo-1657470179447-0f5aa16daa91?auto=format&fit=crop&w=1600&q=80",
+    imageAlt: "Dentist carrying out treatment on a patient",
+    excerpt: "Removes infection and saves a damaged natural tooth.",
     intro:
-      "Orthodontics is about more than straight teeth: a well-aligned bite is easier to clean, wears evenly, and functions comfortably for life. We offer conventional and ceramic braces as well as clear aligners, with a plan matched to your age, goals, and lifestyle.",
+      "Root canal treatment removes infected tissue from inside a tooth to relieve pain and preserve the natural tooth. It is carried out under local anaesthesia using modern rotary instruments.",
     benefits: [
-      "Corrects crowding, gaps, and bite problems at any age",
-      "Options from conventional braces to discreet clear aligners",
-      "Easier cleaning and healthier gums after alignment",
-      "Balanced bite reduces uneven wear and jaw strain",
-      "Structured reviews to keep treatment on schedule",
+      "Relieves pain caused by infection",
+      "Preserves the natural tooth",
+      "Performed under local anaesthesia",
+      "Often completed in a single visit",
     ],
     process: [
       {
-        title: "Orthodontic assessment",
+        title: "Diagnosis",
         detail:
-          "Records, photographs, and X-rays establish exactly how your teeth and jaws relate — the foundation of an honest treatment plan.",
+          "Examination and a digital X-ray confirm whether root canal treatment is required.",
       },
       {
-        title: "Plan & options",
-        detail:
-          "We walk you through the suitable options — metal braces, ceramic braces, or clear aligners — with realistic timelines and costs for each.",
+        title: "Anaesthesia",
+        detail: "The tooth is fully numbed before treatment begins.",
       },
       {
-        title: "Fitting",
+        title: "Cleaning & shaping",
         detail:
-          "Braces are bonded or your first aligner set is delivered, with clear guidance on eating, cleaning, and what the first week feels like.",
+          "Infected tissue is removed and the canals are cleaned and disinfected.",
       },
       {
-        title: "Adjustment visits",
-        detail:
-          "Short visits every 4–8 weeks keep teeth moving as planned. Aligner patients switch trays on a set schedule.",
-      },
-      {
-        title: "Retention",
-        detail:
-          "Once alignment is complete, retainers hold the result — the step that protects everything you've invested.",
+        title: "Sealing & crown",
+        detail: "The canals are sealed and the tooth is protected with a crown.",
       },
     ],
     faqs: [
       {
-        q: "Am I too old for braces?",
-        a: "No. Healthy teeth and gums can be moved at any age — a large share of orthodontic patients today are adults, many choosing clear aligners for discretion.",
+        q: "Is the procedure painful?",
+        a: "It is carried out under local anaesthesia and is comparable to having a filling. The treatment relieves the pain caused by the infection.",
+      },
+      {
+        q: "How many visits are needed?",
+        a: "Many cases are completed in a single visit; more complex teeth may need two.",
+      },
+      {
+        q: "Do I need a crown afterwards?",
+        a: "In most cases, yes. A crown protects the treated tooth and helps it last.",
+      },
+    ],
+    facts: [
+      { label: "Anaesthesia", value: "Local" },
+      { label: "Visits", value: "1–2" },
+      { label: "Goal", value: "Save the tooth" },
+    ],
+  },
+  {
+    slug: "orthodontic-treatment",
+    name: "Orthodontics",
+    shortName: "Orthodontics",
+    icon: AlignCenterVertical,
+    image: "https://images.unsplash.com/photo-1598256989809-394fa4f6cd26?auto=format&fit=crop&w=1600&q=80",
+    imageAlt: "Close-up of a patient with orthodontic braces",
+    excerpt:
+      "Braces and clear aligners to straighten teeth and correct the bite.",
+    intro:
+      "Orthodontic treatment corrects crowding, spacing and bite problems using fixed braces or clear aligners. A well-aligned bite is easier to keep clean and more comfortable over time.",
+    benefits: [
+      "Corrects crowding, gaps and bite problems",
+      "Fixed braces or discreet clear aligners",
+      "Straighter teeth are easier to keep clean",
+      "Suitable for teenagers and adults",
+    ],
+    process: [
+      {
+        title: "Assessment",
+        detail: "Records and X-rays establish how the teeth and jaws relate.",
+      },
+      {
+        title: "Treatment plan",
+        detail: "We recommend braces or clear aligners with a clear timeline.",
+      },
+      {
+        title: "Fitting",
+        detail: "Braces are fitted or the first set of aligners is provided.",
+      },
+      {
+        title: "Reviews & retention",
+        detail:
+          "Regular reviews keep treatment on track; retainers hold the result.",
+      },
+    ],
+    faqs: [
+      {
+        q: "Am I too old for orthodontic treatment?",
+        a: "No. Healthy teeth can be aligned at any age, and many patients are adults.",
+      },
+      {
+        q: "Braces or clear aligners?",
+        a: "It depends on the case. Braces handle complex movements; aligners are discreet and removable. We advise which suits you.",
       },
       {
         q: "How long does treatment take?",
-        a: "Most cases take 12–24 months depending on complexity. Minor corrections can be quicker; we'll give you a realistic estimate at assessment.",
-      },
-      {
-        q: "Braces or clear aligners — which is better?",
-        a: "It depends on the case. Braces handle complex movements reliably; aligners offer discretion and easier cleaning for suitable cases. We'll tell you honestly which fits yours.",
-      },
-      {
-        q: "When should a child first see an orthodontist?",
-        a: "Around age 7–8 is a good time for a first orthodontic check. Most children won't need early treatment, but catching jaw-growth issues early keeps options open.",
+        a: "Most cases take 12–24 months depending on complexity.",
       },
     ],
     facts: [
       { label: "Options", value: "Braces & aligners" },
-      { label: "Typical duration", value: "12–24 months" },
-      { label: "Ages", value: "Children to adults" },
+      { label: "Duration", value: "12–24 months" },
+      { label: "Ages", value: "Teens & adults" },
     ],
   },
   {
@@ -237,100 +208,122 @@ export const focusTreatments: Treatment[] = [
     name: "Oral Hygiene & Preventive Care",
     shortName: "Oral Hygiene",
     icon: ShieldCheck,
-    excerpt:
-      "Professional cleaning, gum care, and check-ups — the quiet habits that prevent expensive problems.",
+    image: "https://images.unsplash.com/photo-1681939278218-a755fb2bf2d3?auto=format&fit=crop&w=1600&q=80",
+    imageAlt: "Dental hygiene treatment being carried out",
+    excerpt: "Professional cleaning and check-ups for healthy teeth and gums.",
     intro:
-      "The best dentistry is the treatment you never need. Professional scaling and polishing, gum assessment, and regular check-ups catch problems while they're small — protecting your teeth and your budget. It's the foundation we recommend for every patient of every age.",
+      "Routine cleaning and check-ups remove plaque and tartar, treat early gum problems and help prevent decay. Preventive care is the foundation of long-term oral health.",
     benefits: [
-      "Removes hardened tartar that brushing can't reach",
-      "Healthier gums — the main defence against tooth loss in adults",
-      "Fresher breath and a cleaner, brighter feel",
-      "Early detection of decay, cracks, and gum disease",
-      "Personalised home-care guidance, not generic advice",
+      "Removes plaque and hardened tartar",
+      "Supports healthy gums",
+      "Detects decay and other issues early",
+      "Recommended every six months",
     ],
     process: [
       {
         title: "Examination",
-        detail:
-          "Teeth, gums, and soft tissues are checked thoroughly, with X-rays only where clinically indicated.",
+        detail: "Teeth and gums are checked, with X-rays only where indicated.",
       },
       {
         title: "Scaling",
-        detail:
-          "Ultrasonic scaling lifts away plaque and hardened tartar from tooth surfaces and below the gum line.",
+        detail: "Plaque and tartar are removed from the teeth and gum line.",
       },
       {
         title: "Polishing",
-        detail:
-          "Surfaces are polished smooth, making it harder for new plaque to take hold.",
+        detail: "Surfaces are polished to slow the return of plaque.",
       },
       {
-        title: "Personal guidance",
-        detail:
-          "Brushing technique, interdental cleaning, and diet advice tailored to what we actually observed in your mouth.",
-      },
-      {
-        title: "Recall schedule",
-        detail:
-          "Most patients benefit from a professional clean every six months; gum patients may need closer intervals.",
+        title: "Advice & recall",
+        detail: "We provide home-care advice and schedule your next visit.",
       },
     ],
     faqs: [
       {
-        q: "Does scaling damage or weaken teeth?",
-        a: "No — this is a common myth. Scaling removes hardened deposits sitting on the tooth. The 'gaps' patients sometimes feel afterwards were spaces the tartar had been occupying.",
+        q: "How often should I have a cleaning?",
+        a: "Every six months suits most patients; more often if you have gum disease.",
       },
       {
-        q: "How often should I get my teeth cleaned?",
-        a: "Every six months suits most people. If you have gum disease, a history of heavy tartar, or wear braces, a shorter interval may be advised.",
+        q: "Does scaling damage the teeth?",
+        a: "No. Scaling removes hardened deposits from the tooth surface and does not harm the tooth.",
       },
       {
-        q: "My gums bleed when I brush. Is that normal?",
-        a: "Bleeding gums are a sign of inflammation, usually early gum disease — and it's very treatable at this stage. It's a reason to book a check-up, not to brush less.",
-      },
-      {
-        q: "Is professional cleaning painful?",
-        a: "Routine scaling is generally comfortable. If your gums are inflamed you may feel mild sensitivity, which settles quickly as they heal.",
+        q: "My gums bleed when I brush — is that normal?",
+        a: "Bleeding gums are a sign of inflammation and are very treatable. It is a reason to book a check-up.",
       },
     ],
     facts: [
-      { label: "Visit length", value: "30–45 minutes" },
+      { label: "Visit", value: "30–45 minutes" },
       { label: "Recommended", value: "Every 6 months" },
       { label: "For", value: "All ages" },
     ],
   },
 ];
 
-/** Secondary services shown on the treatments index. */
-export const otherServices: {
+/** Additional services shown as cards on the treatments index. */
+export type Service = {
   name: string;
   icon: LucideIcon;
+  image: string;
+  imageAlt: string;
   blurb: string;
-}[] = [
+};
+
+export const otherServices: Service[] = [
+  {
+    name: "Full Mouth Rehabilitation",
+    icon: Layers,
+    image: "https://images.unsplash.com/photo-1667133295315-820bb6481730?auto=format&fit=crop&w=1600&q=80",
+    imageAlt: "Dentist reviewing a full-mouth treatment plan",
+    blurb: "Comprehensive restoration of worn, damaged or missing teeth.",
+  },
+  {
+    name: "Implant-Supported Dentures",
+    icon: Anchor,
+    image: "https://images.unsplash.com/photo-1468493858157-0da44aaf1d13?auto=format&fit=crop&w=1600&q=80",
+    imageAlt: "A denture held in a gloved hand",
+    blurb: "Stable, secure dentures anchored by dental implants.",
+  },
   {
     name: "Crowns & Bridges",
     icon: Crown,
-    blurb: "Durable restorations that rebuild damaged teeth and close gaps.",
+    image: "https://images.unsplash.com/photo-1684607632829-1e5bf4f21dab?auto=format&fit=crop&w=1600&q=80",
+    imageAlt: "A dental crown model",
+    blurb: "Restorations that rebuild damaged teeth and replace gaps.",
+  },
+  {
+    name: "Laser Dentistry",
+    icon: Zap,
+    image: "https://images.unsplash.com/photo-1758205308106-5760d0227cc7?auto=format&fit=crop&w=1600&q=80",
+    imageAlt: "Dental treatment being carried out with modern equipment",
+    blurb: "Precise, minimally invasive treatment for gums and soft tissue.",
+  },
+  {
+    name: "Child Dentistry",
+    icon: Baby,
+    image: "https://images.unsplash.com/photo-1758205307836-0829c799890b?auto=format&fit=crop&w=1600&q=80",
+    imageAlt: "A dentist checking a child's teeth",
+    blurb: "Gentle preventive and routine care for children.",
   },
   {
     name: "Tooth Extraction",
     icon: CircleDot,
-    blurb: "Gentle removal — including wisdom teeth — when a tooth can't be saved.",
-  },
-  {
-    name: "Dentures",
-    icon: Sparkle,
-    blurb: "Comfortable full and partial dentures, made to fit well and look natural.",
-  },
-  {
-    name: "Paediatric Dentistry",
-    icon: Baby,
-    blurb: "Patient, friendly care that gives children a calm start with the dentist.",
+    image: "https://images.unsplash.com/photo-1681939282781-341ac4f61996?auto=format&fit=crop&w=1600&q=80",
+    imageAlt: "A patient having their teeth examined",
+    blurb: "Safe removal of damaged or impacted teeth, including wisdom teeth.",
   },
   {
     name: "Gum (Periodontal) Care",
     icon: Stethoscope,
-    blurb: "Treatment for bleeding gums and periodontitis, from deep cleaning onwards.",
+    image: "https://images.unsplash.com/photo-1588776814546-daab30f310ce?auto=format&fit=crop&w=1600&q=80",
+    imageAlt: "A dental hygienist at work",
+    blurb: "Treatment for gum disease and inflammation.",
+  },
+  {
+    name: "Dentures",
+    icon: Smile,
+    image: "https://images.unsplash.com/photo-1473232117216-c950d4ef2e14?auto=format&fit=crop&w=1600&q=80",
+    imageAlt: "A set of dentures",
+    blurb: "Custom full and partial dentures for missing teeth.",
   },
 ];
 

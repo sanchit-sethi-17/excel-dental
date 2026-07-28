@@ -21,7 +21,7 @@ const timeSlots = [
 type Errors = Partial<Record<"name" | "treatment" | "date", string>>;
 
 const inputClasses =
-  "w-full rounded-xl border border-stone-300 bg-white px-4 py-3 text-base text-ink placeholder:text-stone-400 transition-colors duration-200 focus:border-brand focus:outline-none focus:ring-[3px] focus:ring-brand/15";
+  "w-full rounded-xl border border-line-strong bg-surface px-4 py-3 text-base text-foreground placeholder:text-stone-400 transition-colors duration-200 focus:border-brand focus:outline-none focus:ring-[3px] focus:ring-brand/15";
 
 function todayISO() {
   const d = new Date();
@@ -93,16 +93,16 @@ export function BookingForm() {
 
   if (sent) {
     return (
-      <div className="rounded-3xl border border-stone-200 bg-white p-8 sm:p-10">
-        <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-soft text-brand">
+      <div className="rounded-3xl border border-line bg-surface p-8 sm:p-10">
+        <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-soft text-accent">
           <MessageCircle className="h-7 w-7" />
         </span>
-        <h2 className="mt-6 font-display text-2xl font-medium text-ink">
+        <h2 className="mt-6 font-display text-2xl font-medium text-foreground">
           WhatsApp should have opened
         </h2>
-        <p className="mt-3 text-[0.95rem] leading-relaxed text-stone-600">
+        <p className="mt-3 text-[0.95rem] leading-relaxed text-muted">
           Your appointment request is pre-filled — just press{" "}
-          <span className="font-medium text-ink">send</span> in WhatsApp and
+          <span className="font-medium text-foreground">send</span> in WhatsApp and
           the clinic will confirm your slot.
         </p>
         <div className="mt-7 flex flex-wrap items-center gap-4">
@@ -118,14 +118,14 @@ export function BookingForm() {
           <button
             type="button"
             onClick={() => setSent(false)}
-            className="cursor-pointer text-sm font-medium text-stone-600 underline-offset-4 hover:text-ink hover:underline"
+            className="cursor-pointer text-sm font-medium text-muted underline-offset-4 hover:text-foreground hover:underline"
           >
             Edit my request
           </button>
         </div>
-        <p className="mt-6 border-t border-stone-100 pt-5 text-sm text-stone-500">
+        <p className="mt-6 border-t border-line pt-5 text-sm text-subtle">
           Prefer to talk? Call us at{" "}
-          <a href={site.phoneHref} className="font-medium text-brand">
+          <a href={site.phoneHref} className="font-medium text-accent">
             {site.phone}
           </a>
           .
@@ -139,12 +139,12 @@ export function BookingForm() {
       ref={formRef}
       onSubmit={onSubmit}
       noValidate
-      className="rounded-3xl border border-stone-200 bg-white p-8 sm:p-10"
+      className="rounded-3xl border border-line bg-surface p-8 sm:p-10"
     >
       <div className="grid gap-6 sm:grid-cols-2">
         <div className="sm:col-span-2">
-          <label htmlFor="bf-name" className="mb-2 block text-sm font-medium text-ink">
-            Your name <span className="text-brand">*</span>
+          <label htmlFor="bf-name" className="mb-2 block text-sm font-medium text-foreground">
+            Your name <span className="text-accent">*</span>
           </label>
           <input
             id="bf-name"
@@ -166,8 +166,8 @@ export function BookingForm() {
         </div>
 
         <div className="sm:col-span-2">
-          <label htmlFor="bf-treatment" className="mb-2 block text-sm font-medium text-ink">
-            What do you need help with? <span className="text-brand">*</span>
+          <label htmlFor="bf-treatment" className="mb-2 block text-sm font-medium text-foreground">
+            What do you need help with? <span className="text-accent">*</span>
           </label>
           <select
             id="bf-treatment"
@@ -197,8 +197,8 @@ export function BookingForm() {
         </div>
 
         <div>
-          <label htmlFor="bf-date" className="mb-2 block text-sm font-medium text-ink">
-            Preferred date <span className="text-brand">*</span>
+          <label htmlFor="bf-date" className="mb-2 block text-sm font-medium text-foreground">
+            Preferred date <span className="text-accent">*</span>
           </label>
           <input
             id="bf-date"
@@ -221,7 +221,7 @@ export function BookingForm() {
         </div>
 
         <div>
-          <label htmlFor="bf-slot" className="mb-2 block text-sm font-medium text-ink">
+          <label htmlFor="bf-slot" className="mb-2 block text-sm font-medium text-foreground">
             Preferred time
           </label>
           <select
@@ -239,7 +239,7 @@ export function BookingForm() {
         </div>
 
         <div className="sm:col-span-2">
-          <label htmlFor="bf-phone" className="mb-2 block text-sm font-medium text-ink">
+          <label htmlFor="bf-phone" className="mb-2 block text-sm font-medium text-foreground">
             Phone number{" "}
             <span className="font-normal text-stone-400">(optional)</span>
           </label>
@@ -256,7 +256,7 @@ export function BookingForm() {
         </div>
 
         <div className="sm:col-span-2">
-          <label htmlFor="bf-note" className="mb-2 block text-sm font-medium text-ink">
+          <label htmlFor="bf-note" className="mb-2 block text-sm font-medium text-foreground">
             Anything we should know?{" "}
             <span className="font-normal text-stone-400">(optional)</span>
           </label>
@@ -278,7 +278,7 @@ export function BookingForm() {
         <CalendarCheck className="h-5 w-5" />
         Request appointment on WhatsApp
       </button>
-      <p className="mt-4 text-sm leading-relaxed text-stone-500">
+      <p className="mt-4 text-sm leading-relaxed text-subtle">
         This opens WhatsApp with your request pre-filled — you review it and
         press send. Nothing is sent until you do.
       </p>

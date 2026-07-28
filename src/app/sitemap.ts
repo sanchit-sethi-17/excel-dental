@@ -1,7 +1,6 @@
 import type { MetadataRoute } from "next";
 import { site } from "@/lib/site";
 import { focusTreatments } from "@/lib/treatments";
-import { posts } from "@/lib/blog";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = [
@@ -9,8 +8,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/about",
     "/treatments",
     "/consultants",
-    "/gallery",
-    "/blog",
     "/contact",
     "/book",
   ].map((path) => ({
@@ -27,12 +24,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
-  const blogPages = posts.map((p) => ({
-    url: `${site.url}/blog/${p.slug}`,
-    lastModified: new Date(p.date),
-    changeFrequency: "yearly" as const,
-    priority: 0.6,
-  }));
-
-  return [...staticPages, ...treatmentPages, ...blogPages];
+  return [...staticPages, ...treatmentPages];
 }

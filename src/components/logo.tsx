@@ -18,8 +18,8 @@ export function LogoMark({ className }: { className?: string }) {
 
 export function Logo({
   className,
-  markClassName = "text-brand",
-  subtitleClassName = "text-stone-500",
+  markClassName = "text-accent",
+  subtitleClassName = "text-subtle",
 }: {
   className?: string;
   markClassName?: string;

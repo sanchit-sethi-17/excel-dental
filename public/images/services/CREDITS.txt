@@ -1,0 +1,33 @@
+Service photography — interim stock images
+==========================================
+
+Source: Unsplash (https://unsplash.com)
+Licence: Unsplash License — free for commercial and non-commercial use,
+no permission or attribution required (attribution appreciated).
+
+CURRENT SETUP
+The live site loads these photos directly from the Unsplash CDN
+(images.unsplash.com), optimized automatically by Next.js. This keeps
+deployments fast and requires no image storage.
+
+These local .jpg copies are kept as backups. To self-host instead (recommended
+before final launch, or to use the clinic's own photos):
+  1. Replace any file here with the clinic's own photo, keeping the file name.
+  2. In the code, switch the image URLs back to "/images/services/<name>.jpg".
+Ask your developer to flip this — it is a small change.
+
+File -> Unsplash photo id
+implants.jpg          photo-1593022356769-11f762e25ed9
+root-canal.jpg        photo-1657470179447-0f5aa16daa91
+orthodontics.jpg      photo-1598256989809-394fa4f6cd26
+oral-hygiene.jpg      photo-1681939278218-a755fb2bf2d3
+full-mouth-rehab.jpg  photo-1667133295315-820bb6481730
+implant-dentures.jpg  photo-1468493858157-0da44aaf1d13
+crowns-bridges.jpg    photo-1684607632829-1e5bf4f21dab
+laser-dentistry.jpg   photo-1758205308106-5760d0227cc7
+child-dentistry.jpg   photo-1758205307836-0829c799890b
+extraction.jpg        photo-1681939282781-341ac4f61996
+gum-care.jpg          photo-1588776814546-daab30f310ce
+dentures.jpg          photo-1473232117216-c950d4ef2e14
+clinic-interior.jpg   photo-1629909613654-28e377c37b09
+consult.jpg           photo-1653508310729-7d6d2e2fd6c9

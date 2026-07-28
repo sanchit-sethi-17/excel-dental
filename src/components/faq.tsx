@@ -9,7 +9,7 @@ function FaqItem({ faq }: { faq: Faq }) {
   const panelId = useId();
 
   return (
-    <div className="rounded-2xl border border-stone-200 bg-white transition-colors duration-200 hover:border-stone-300">
+    <div className="rounded-2xl border border-line bg-surface transition-colors duration-200 hover:border-line-strong">
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
@@ -17,16 +17,16 @@ function FaqItem({ faq }: { faq: Faq }) {
         aria-controls={panelId}
         className="flex w-full cursor-pointer items-center justify-between gap-4 px-6 py-5 text-left focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
       >
-        <span className="font-medium text-ink">{faq.q}</span>
+        <span className="font-medium text-foreground">{faq.q}</span>
         <ChevronDown
-          className={`h-5 w-5 shrink-0 text-brand transition-transform duration-300 ${
+          className={`h-5 w-5 shrink-0 text-accent transition-transform duration-300 ${
             open ? "rotate-180" : ""
           }`}
         />
       </button>
       <div id={panelId} className="accordion-panel" data-open={open}>
         <div>
-          <p className="px-6 pb-6 text-[0.95rem] leading-relaxed text-stone-600">
+          <p className="px-6 pb-6 text-[0.95rem] leading-relaxed text-muted">
             {faq.a}
           </p>
         </div>

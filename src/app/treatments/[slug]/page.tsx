@@ -4,6 +4,7 @@ import { Check } from "lucide-react";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 import { FaqList } from "@/components/faq";
+import { Photo } from "@/components/photo";
 import { Reveal, Stagger, StaggerItem } from "@/components/reveal";
 import { SectionHeading } from "@/components/ui";
 import { focusTreatments, getTreatment } from "@/lib/treatments";
@@ -42,31 +43,41 @@ export default async function TreatmentPage({
           {treatment.facts.map((f) => (
             <span
               key={f.label}
-              className="rounded-full border border-stone-200 bg-cream px-4 py-2 text-sm"
+              className="rounded-full border border-line bg-background px-4 py-2 text-sm"
             >
-              <span className="text-stone-500">{f.label}: </span>
-              <span className="font-medium text-ink">{f.value}</span>
+              <span className="text-subtle">{f.label}: </span>
+              <span className="font-medium text-foreground">{f.value}</span>
             </span>
           ))}
         </div>
       </PageHero>
 
+      {/* Hero photo */}
+      <section className="mx-auto max-w-7xl px-4 pt-10 sm:px-6 lg:px-8 lg:pt-14">
+        <Reveal>
+          <Photo
+            src={treatment.image}
+            alt={treatment.imageAlt}
+            ratio="aspect-[21/9]"
+            priority
+            sizes="(max-width: 1280px) 100vw, 1216px"
+          />
+        </Reveal>
+      </section>
+
       {/* Benefits */}
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div className="grid gap-12 lg:grid-cols-12">
           <Reveal className="lg:col-span-5">
-            <SectionHeading
-              eyebrow="Why it's worth it"
-              title="What this treatment gives you"
-            />
+            <SectionHeading eyebrow="Benefits" title="What this treatment offers" />
           </Reveal>
           <div className="lg:col-span-7">
             <Stagger className="space-y-4">
               {treatment.benefits.map((b) => (
                 <StaggerItem key={b}>
-                  <div className="flex gap-4 rounded-2xl border border-stone-200 bg-white px-6 py-4.5">
-                    <Check className="mt-0.5 h-5 w-5 shrink-0 text-brand" />
-                    <p className="text-[0.95rem] leading-relaxed text-stone-700">{b}</p>
+                  <div className="flex gap-4 rounded-2xl border border-line bg-surface px-6 py-4.5">
+                    <Check className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
+                    <p className="text-[0.95rem] leading-relaxed text-muted">{b}</p>
                   </div>
                 </StaggerItem>
               ))}
@@ -76,7 +87,7 @@ export default async function TreatmentPage({
       </section>
 
       {/* Process */}
-      <section className="border-y border-stone-200 bg-white">
+      <section className="border-y border-line bg-surface">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
           <Reveal>
             <SectionHeading
@@ -96,14 +107,14 @@ export default async function TreatmentPage({
                       className="absolute left-5.5 top-12 h-[calc(100%-2.5rem)] w-px bg-stone-200"
                     />
                   )}
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-soft font-display text-lg font-medium text-brand">
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-soft font-display text-lg font-medium text-accent">
                     {i + 1}
                   </span>
                   <div className="pt-1.5">
-                    <h3 className="font-display text-xl font-medium text-ink">
+                    <h3 className="font-display text-xl font-medium text-foreground">
                       {step.title}
                     </h3>
-                    <p className="mt-2 text-[0.95rem] leading-relaxed text-stone-600">
+                    <p className="mt-2 text-[0.95rem] leading-relaxed text-muted">
                       {step.detail}
                     </p>
                   </div>

@@ -7,7 +7,7 @@ export const site = {
   legalName: "Excel Dental Clinic & Implant Centre",
   tagline: "Smile with confidence",
   description:
-    "Excel Dental Clinic & Implant Centre in Sector 21C, Faridabad — root canal treatment, dental implants, orthodontics and preventive oral care led by Dr. Esha Walia (BDS, MDS).",
+    "Dental clinic in Sector 21C, Faridabad. Dental implants, root canal treatment, orthodontics and preventive care, led by Dr. Walia (BDS, MDS).",
   url: "https://exceldental.in", // PLACEHOLDER — final domain TBD
 
   phone: "+91 98103 09132",

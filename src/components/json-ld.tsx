@@ -40,7 +40,7 @@ export function JsonLd() {
     })),
     founder: {
       "@type": "Person",
-      name: "Dr. Esha Walia",
+      name: "Dr. Walia",
       honorificSuffix: "BDS, MDS",
       jobTitle: "Principal Dental Consultant",
     },

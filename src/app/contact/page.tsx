@@ -46,24 +46,24 @@ export default function ContactPage() {
         eyebrow="Contact"
         title={
           <>
-            We&rsquo;re easy to <em className="text-brand">reach</em>
+            Get in <em className="text-accent">touch</em>
           </>
         }
-        lede="Questions about a treatment, a tooth that's troubling you, or just directions — pick whichever way suits you."
+        lede="Contact us about an appointment, a treatment, or directions to the clinic."
       />
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div className="grid gap-6 md:grid-cols-3">
           {cards.map((c, i) => (
             <Reveal key={c.title} delay={i * 0.08}>
-              <div className="flex h-full flex-col rounded-2xl border border-stone-200 bg-white p-7 shadow-sm">
-                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-soft text-brand">
+              <div className="flex h-full flex-col rounded-2xl border border-line bg-surface p-7 shadow-sm">
+                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-soft text-accent">
                   <c.icon className="h-6 w-6" />
                 </span>
-                <h2 className="mt-5 font-display text-xl font-medium text-ink">
+                <h2 className="mt-5 font-display text-xl font-medium text-foreground">
                   {c.title}
                 </h2>
-                <p className="mt-2 flex-1 text-sm leading-relaxed text-stone-600">
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">
                   {c.body}
                 </p>
                 <a
@@ -71,7 +71,7 @@ export default function ContactPage() {
                   {...(c.external
                     ? { target: "_blank", rel: "noopener noreferrer" }
                     : {})}
-                  className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-brand transition-colors hover:text-brand-deep"
+                  className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-colors hover:text-accent"
                 >
                   {c.action} →
                 </a>
@@ -85,14 +85,14 @@ export default function ContactPage() {
             <MapEmbed className="min-h-[26rem]" />
           </Reveal>
           <Reveal className="lg:col-span-5" delay={0.12}>
-            <div className="flex h-full flex-col justify-center rounded-3xl bg-ink p-9 text-stone-300">
+            <div className="flex h-full flex-col justify-center rounded-3xl bg-panel p-9 text-stone-300">
               <h2 className="font-display text-2xl font-medium text-white">
                 Opening hours
               </h2>
               <ul className="mt-6 space-y-4">
                 {site.hours.map((h) => (
                   <li key={h.time} className="flex items-start gap-3 text-[0.95rem]">
-                    <Clock className="mt-1 h-4 w-4 shrink-0 text-brand" />
+                    <Clock className="mt-1 h-4 w-4 shrink-0 text-accent" />
                     <span>
                       {h.days && (
                         <span className="block font-medium text-white">{h.days}</span>

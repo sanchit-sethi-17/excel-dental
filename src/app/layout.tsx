@@ -6,6 +6,7 @@ import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { WhatsAppFloat } from "@/components/whatsapp-float";
 import { JsonLd } from "@/components/json-ld";
+import { ThemeScript } from "@/components/theme";
 import { site } from "@/lib/site";
 
 const fraunces = Fraunces({
@@ -43,9 +44,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${fraunces.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <ThemeScript />
         <JsonLd />
         <Providers>
           <Navbar />

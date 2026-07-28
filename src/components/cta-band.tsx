@@ -12,11 +12,10 @@ export function CtaBand() {
           <div className="flex flex-col items-start gap-8 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-2xl">
               <h2 className="font-display text-3xl font-medium tracking-tight text-white text-balance sm:text-4xl">
-                Ready to smile with confidence?
+                Book your appointment
               </h2>
               <p className="mt-3 text-base leading-relaxed text-orange-100/90 sm:text-lg">
-                Book a consultation — we&rsquo;ll examine, explain your options
-                honestly, and only then talk treatment.
+                Request a time online or call the clinic directly.
               </p>
             </div>
             <div className="flex flex-wrap items-center gap-4">

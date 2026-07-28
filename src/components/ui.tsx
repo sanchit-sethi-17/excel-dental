@@ -6,8 +6,9 @@ const buttonVariants = {
   primary:
     "bg-brand text-white hover:bg-brand-deep shadow-sm hover:shadow-md hover:-translate-y-px",
   secondary:
-    "border border-stone-300 bg-white text-ink hover:border-stone-400 hover:bg-stone-50",
-  ghost: "text-brand hover:bg-brand-soft",
+    "border border-line-strong bg-surface text-foreground hover:border-line-strong hover:bg-surface-2",
+  ghost: "text-accent hover:bg-brand-soft",
+  // inverted stays literally light-on-dark: it sits on dark panels in both themes
   inverted: "bg-white text-ink hover:bg-stone-100 shadow-sm hover:-translate-y-px",
 } as const;
 
@@ -53,7 +54,7 @@ export function Eyebrow({
 }) {
   return (
     <p
-      className={`text-xs font-semibold uppercase tracking-[0.18em] text-brand ${className ?? ""}`}
+      className={`text-xs font-semibold uppercase tracking-[0.18em] text-accent ${className ?? ""}`}
     >
       {children}
     </p>
@@ -80,7 +81,7 @@ export function SectionHeading({
       {eyebrow && <Eyebrow className="mb-3">{eyebrow}</Eyebrow>}
       <h2
         className={`font-display text-3xl font-medium tracking-tight text-balance sm:text-4xl ${
-          invert ? "text-white" : "text-ink"
+          invert ? "text-white" : "text-foreground"
         }`}
       >
         {title}
@@ -88,7 +89,7 @@ export function SectionHeading({
       {lede && (
         <p
           className={`mt-4 text-base leading-relaxed sm:text-lg ${
-            invert ? "text-stone-300" : "text-stone-600"
+            invert ? "text-stone-300" : "text-muted"
           }`}
         >
           {lede}
@@ -100,15 +101,15 @@ export function SectionHeading({
 
 const placeholderTones = {
   light: {
-    bg: "bg-gradient-to-br from-stone-100 to-stone-200",
-    mark: "text-stone-300/60",
+    bg: "bg-gradient-to-br from-stone-100 to-stone-200 dark:from-stone-800 dark:to-stone-700",
+    mark: "text-stone-300/60 dark:text-stone-600",
   },
   brand: {
-    bg: "bg-gradient-to-br from-brand-soft to-[#efd9cf]",
-    mark: "text-brand/20",
+    bg: "bg-gradient-to-br from-brand-soft to-[#efd9cf] dark:from-[#3a251b] dark:to-[#2a1a12]",
+    mark: "text-brand/20 dark:text-accent/25",
   },
   ink: {
-    bg: "bg-gradient-to-br from-stone-800 to-ink",
+    bg: "bg-gradient-to-br from-stone-800 to-stone-950",
     mark: "text-stone-700",
   },
 } as const;
@@ -139,7 +140,7 @@ export function PlaceholderImage({
         className={`absolute left-1/2 top-1/2 h-2/5 w-2/5 -translate-x-1/2 -translate-y-1/2 ${t.mark}`}
       />
       {label && (
-        <span className="absolute bottom-3 left-3 rounded-full bg-white/80 px-3 py-1 text-[0.65rem] font-medium uppercase tracking-wider text-stone-500 backdrop-blur-sm">
+        <span className="absolute bottom-3 left-3 rounded-full bg-white/85 px-3 py-1 text-[0.65rem] font-medium uppercase tracking-wider text-stone-600 backdrop-blur-sm">
           {label}
         </span>
       )}

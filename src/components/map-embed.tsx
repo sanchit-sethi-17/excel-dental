@@ -8,7 +8,7 @@ export function MapEmbed({ className }: { className?: string }) {
       loading="lazy"
       referrerPolicy="no-referrer-when-downgrade"
       allowFullScreen
-      className={`h-full min-h-80 w-full rounded-2xl border border-stone-200 grayscale-[35%] ${className ?? ""}`}
+      className={`h-full min-h-80 w-full rounded-2xl border border-line grayscale-[35%] ${className ?? ""}`}
     />
   );
 }

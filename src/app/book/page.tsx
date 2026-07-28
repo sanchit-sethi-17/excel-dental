@@ -39,10 +39,10 @@ export default function BookPage() {
         eyebrow="Book an appointment"
         title={
           <>
-            Reserve your visit in <em className="text-brand">under a minute</em>
+            Request an appointment <em className="text-accent">online</em>
           </>
         }
-        lede="No login, no waiting on hold. Tell us what you need and when suits you — the clinic confirms directly."
+        lede="Tell us what you need and when suits you. The clinic confirms your appointment directly."
       />
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
@@ -53,20 +53,20 @@ export default function BookPage() {
 
           <div className="lg:col-span-5">
             <Reveal delay={0.12}>
-              <h2 className="font-display text-2xl font-medium text-ink">
+              <h2 className="font-display text-2xl font-medium text-foreground">
                 How it works
               </h2>
               <ol className="mt-6 space-y-6">
                 {steps.map((s, i) => (
                   <li key={s.title} className="flex gap-4">
-                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-soft text-brand">
+                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-soft text-accent">
                       <s.icon className="h-5 w-5" />
                     </span>
                     <div>
-                      <p className="font-medium text-ink">
+                      <p className="font-medium text-foreground">
                         {i + 1}. {s.title}
                       </p>
-                      <p className="mt-1 text-sm leading-relaxed text-stone-600">
+                      <p className="mt-1 text-sm leading-relaxed text-muted">
                         {s.text}
                       </p>
                     </div>
@@ -74,7 +74,7 @@ export default function BookPage() {
                 ))}
               </ol>
 
-              <div className="mt-10 rounded-2xl bg-ink p-7 text-stone-300">
+              <div className="mt-10 rounded-2xl bg-panel p-7 text-stone-300">
                 <h3 className="font-display text-lg font-medium text-white">
                   In pain right now?
                 </h3>
@@ -91,12 +91,12 @@ export default function BookPage() {
                 </a>
               </div>
 
-              <div className="mt-6 flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 text-sm text-stone-600">
-                <Clock className="mt-0.5 h-4 w-4 shrink-0 text-brand" />
+              <div className="mt-6 flex items-start gap-3 rounded-2xl border border-line bg-surface p-5 text-sm text-muted">
+                <Clock className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
                 <div>
                   {site.hours.map((h) => (
                     <p key={h.time}>
-                      {h.days && <span className="font-medium text-ink">{h.days}: </span>}
+                      {h.days && <span className="font-medium text-foreground">{h.days}: </span>}
                       {h.time}
                     </p>
                   ))}

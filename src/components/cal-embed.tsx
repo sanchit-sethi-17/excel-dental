@@ -14,7 +14,7 @@ export function CalEmbed() {
       src={`https://cal.com/${link}?embed=true&theme=light`}
       title="Book an appointment with Excel Dental"
       loading="lazy"
-      className="h-[44rem] w-full rounded-3xl border border-stone-200 bg-white"
+      className="h-[44rem] w-full rounded-3xl border border-line bg-surface"
     />
   );
 }
