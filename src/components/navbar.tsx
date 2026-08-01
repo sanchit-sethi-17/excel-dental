@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, m } from "motion/react";
-import { Menu, Phone, User, X } from "lucide-react";
+import { Menu, Phone, X } from "lucide-react";
 import { Logo } from "@/components/logo";
 import { ThemeToggle } from "@/components/theme";
 import { site } from "@/lib/site";
@@ -79,15 +79,6 @@ export function Navbar() {
           ))}
           <ThemeToggle className="ml-1" />
           <Link
-            href="/account"
-            aria-label="My account"
-            className={`flex h-11 w-11 items-center justify-center rounded-full transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand ${
-              isActive("/account") ? "text-accent" : "text-muted hover:text-foreground"
-            }`}
-          >
-            <User className="h-5 w-5" />
-          </Link>
-          <Link
             href="/book"
             className="ml-1 inline-flex cursor-pointer items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-sm font-medium text-white shadow-sm transition-all duration-200 hover:-translate-y-px hover:bg-brand-deep hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
           >
@@ -158,23 +149,6 @@ export function Navbar() {
                   </Link>
                 </m.li>
               ))}
-              <m.li
-                variants={{
-                  hidden: { opacity: 0, y: 12 },
-                  visible: { opacity: 1, y: 0 },
-                }}
-              >
-                <Link
-                  href="/account"
-                  className={`block rounded-xl px-4 py-3.5 font-display text-2xl font-medium tracking-tight ${
-                    isActive("/account")
-                      ? "bg-brand-soft text-accent"
-                      : "text-foreground hover:bg-surface-2"
-                  }`}
-                >
-                  My account
-                </Link>
-              </m.li>
               <m.li
                 variants={{
                   hidden: { opacity: 0, y: 12 },

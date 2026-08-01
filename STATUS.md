@@ -30,13 +30,17 @@ The marketing website is deployed and working:
 - Blog and Gallery pages were **removed** at client request (code kept dormant,
   easy to restore)
 
-## 2. What is BUILT but NOT live yet — the Patient Portal
+## 2. Patient Portal — BUILT, then PARKED (2026-08-02)
 
-Fully working **on the local machine only**. On the live site `/account` returns
-404 on purpose: a login system needs a real database + secrets, which requires
-the go-live steps in section 4.
+**Status: parked, not deleted.** At the client's request the login system was
+set aside for now. Every file was moved intact to
+**`_parked/patient-portal/`** — see `RESTORE.md` in that folder for the exact
+commands to bring it back (a few file moves + one navbar edit).
 
-Features (all verified working locally):
+The account icon was removed from the navbar, and `/account` no longer exists on
+the site. The public "Book Appointment" form (WhatsApp) is unaffected.
+
+It was fully working locally before parking. Features built:
 
 - **Register / Login** using **email OR mobile number** as the username
 - **Password login** (securely hashed — scrypt)
@@ -50,28 +54,18 @@ Features (all verified working locally):
   and tells them to call the clinic.
 - Prevents double-booking the same date + time slot
 
-> **Note:** OTP codes and password-reset links are currently **shown on screen**
-> because no email/SMS provider is connected yet. See section 4, step 4.
+> **Note:** OTP codes and password-reset links were **shown on screen**, because
+> no email/SMS provider is connected yet. See section 4, step 4.
 
-### How to run/test it locally
+### How to run the site locally
 
 ```bash
 cd excel-dental
 npm run dev
 ```
 
-Then open:
-
-| URL | What it is |
-| --- | --- |
-| <http://localhost:3000> | the website |
-| <http://localhost:3000/account/register> | create an account |
-| <http://localhost:3000/account/login> | password login |
-| <http://localhost:3000/account/otp> | one-time-code login |
-| <http://localhost:3000/account> | patient dashboard |
-| <http://localhost:3000/account/book> | book an appointment |
-
-Local data is a SQLite file at `.data/app.db` (gitignored). Delete it to reset.
+Then open <http://localhost:3000>. (The portal URLs under `/account` are gone
+while it's parked — restore it first, per `_parked/patient-portal/RESTORE.md`.)
 
 ## 3. Tech overview
 
@@ -90,13 +84,13 @@ Local data is a SQLite file at `.data/app.db` (gitignored). Delete it to reset.
 | --- | --- |
 | `src/lib/site.ts` | all clinic facts: phone, address, hours, Cal.com switch |
 | `src/lib/treatments.ts` | every service: name, photo, copy, FAQs |
-| `src/lib/db.ts` | **the only file that touches the database** — swap this for Postgres at go-live |
-| `src/lib/auth.ts` | password hashing + sessions |
-| `src/lib/booking.ts` | time slots, appointment types, the 24-hour cutoff rule |
-| `src/app/account/actions.ts` | register/login/OTP/reset/book/edit/cancel logic |
+| `src/components/navbar.tsx` | site navigation |
+| `_parked/patient-portal/` | the parked login system + `RESTORE.md` |
 | `DEPLOY.md` | step-by-step deployment guide |
 
-## 4. TO GO LIVE with the portal (3 steps + 1 optional)
+## 4. TO GO LIVE with the portal — only if it's un-parked (3 steps + 1 optional)
+
+*(Not needed while the portal is parked. Kept here for when it comes back.)*
 
 **Step 1 — GitHub.** Create an empty private repo called `excel-dental` (no
 README/gitignore). The code is already committed locally, so just:
@@ -115,7 +109,8 @@ DB at <https://neon.tech>. Then add in Vercel → Settings → Environment Varia
 - `DATABASE_URL` — the Postgres connection string
 - `SESSION_SECRET` — a long random string (`openssl rand -hex 32`)
 
-**Then:** the developer swaps `src/lib/db.ts` from local SQLite to Postgres and
+**Then:** the developer un-parks the portal and swaps
+`_parked/patient-portal/src/lib/db.ts` from local SQLite to Postgres, and
 pushes. Portal goes live.
 
 **Step 4 (optional) — real OTP / email delivery.** Connect **Resend** (email) for
@@ -142,7 +137,7 @@ custom. Cal.com is still useful for syncing the *clinic's own* calendar.
 | SSL / security | — | ₹0 (automatic) | ✅ done |
 | **Google Business Profile** | ₹0 | ₹0 | ✅ **biggest win for Google search** |
 | Cal.com booking | ₹0 | ₹0 (free plan) | optional |
-| Database (Neon / Vercel Postgres) | ₹0 | ₹0 (free tier) | ✅ for the portal |
+| Database (Neon / Vercel Postgres) | ₹0 | ₹0 (free tier) | only if portal returns |
 | Professional email (info@…) | — | ₹0–200 / month | optional |
 | WhatsApp automation (bot) | new SIM ~₹0–500 | ₹1,000–3,000 / month + per-message | optional |
 | Google Ads | — | client's ad budget | optional |

@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Parked, not part of the build — see _parked/patient-portal/RESTORE.md
+    "_parked/**",
   ]),
 ]);
 
