@@ -4,7 +4,7 @@ const items = [
   "Orthodontics",
   "Oral Hygiene",
   "Crowns & Bridges",
-  "Paediatric Dentistry",
+  "Child Dentistry",
   "Gum Care",
 ];
 

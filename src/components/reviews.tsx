@@ -11,17 +11,17 @@ import { site } from "@/lib/site";
 const testimonials = [
   {
     name: "Priya S.",
-    text: "I came in scared of a root canal and left wondering what I'd been worried about. Everything was explained before it was done.",
+    text: "I came in nervous about a root canal and the whole thing was calm and clearly explained. No pain and no pressure.",
     treatment: "Root Canal Treatment",
   },
   {
     name: "Rajesh K.",
-    text: "Got an implant done for a molar I'd lost years ago. The process was unhurried and precise, and the follow-up care was genuine.",
+    text: "Had an implant for a molar I lost years ago. The process was unhurried and precise, and the follow-up was genuine.",
     treatment: "Dental Implant",
   },
   {
     name: "Meenakshi A.",
-    text: "We take both our kids here. The doctor is patient, never pushes unnecessary treatment, and the clinic is spotless.",
+    text: "We take both our kids here. Patient, never pushes unnecessary treatment, and the clinic is spotless.",
     treatment: "Family Dentistry",
   },
 ];

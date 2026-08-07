@@ -22,9 +22,8 @@ export function Footer() {
               <Logo markClassName="text-accent" subtitleClassName="text-stone-400" />
             </Link>
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-stone-400">
-              A focused dental practice in Sector 21C, Faridabad — root canals,
-              implants, orthodontics, and the preventive care that keeps you
-              out of the dentist&rsquo;s chair.
+              A focused dental practice in Sector 21C, Faridabad — implants,
+              root canal, orthodontics and preventive care.
             </p>
             <p className="mt-6 font-display text-lg italic text-accent">
               {site.tagline}.
