@@ -3,7 +3,8 @@
 Last updated: 2026-08-11
 
 **Client:** Excel Dental Clinic & Implant Centre, Sector 21C, Faridabad
-**Led by:** Dr. Walia (BDS, MDS) — ex-consultant at Clove Dental & Axiss Dental
+**Led by:** Dr. Esha (BDS, MDS) — ex-Clinic Head at Axiss Dental & Clove Dental
+**Consultants:** Dr. Amit Narang (implantologist), Dr. Varun Goyal (orthodontist)
 **Phone:** +91 98103 09132
 **Address:** Shop No. 195, Basement, Huda Market, Sector 21C, Faridabad — 121001
 **Tagline:** "Smile with confidence"
@@ -18,10 +19,11 @@ Last updated: 2026-08-11
 The marketing website is deployed and working:
 
 - **Pages:** Home, About, Treatments (+ 4 detail pages), Consultants, Contact, Book
-- **12 services, each with a photo** — Implants, Root Canal, Orthodontics, Oral
-  Hygiene (these 4 have full detail pages), plus Full Mouth Rehabilitation,
-  Implant-Supported Dentures, Crowns & Bridges, Laser Dentistry, Child Dentistry,
-  Tooth Extraction, Gum Care, Dentures
+- **13 services, each with a photo** — Implants, Root Canal, Orthodontics, Oral
+  Hygiene (these 4 have full detail pages), plus Dental Fillings, Full Mouth
+  Rehabilitation, Implant-Supported Dentures, Crowns & Bridges, Laser Dentistry,
+  Child Dentistry, Wisdom Tooth Removal, Gum Care, Dentures
+- **Consultants page** with all three doctors, photos, bios and credentials
 - **Dark mode** — sun/moon toggle in the navbar, follows the visitor's system
   setting, remembers their choice, no flash on load
 - **Booking (current live method):** a form that opens WhatsApp with the request
