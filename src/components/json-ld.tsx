@@ -1,3 +1,4 @@
+import { doctors } from "@/lib/doctors";
 import { site } from "@/lib/site";
 import { focusTreatments } from "@/lib/treatments";
 
@@ -40,10 +41,16 @@ export function JsonLd() {
     })),
     founder: {
       "@type": "Person",
-      name: "Dr. Walia",
+      name: "Dr. Esha",
       honorificSuffix: "BDS, MDS",
       jobTitle: "Principal Dental Consultant",
     },
+    employee: doctors.map((d) => ({
+      "@type": "Person",
+      name: d.name,
+      honorificSuffix: d.qualification,
+      jobTitle: d.role,
+    })),
   };
 
   return (

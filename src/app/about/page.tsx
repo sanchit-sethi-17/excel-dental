@@ -16,7 +16,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Excel Dental Clinic & Implant Centre — a specialist-led dental practice in Sector 21C, Faridabad, led by Dr. Walia (BDS, MDS).",
+    "Excel Dental Clinic & Implant Centre — a specialist-led dental practice in Sector 21C, Faridabad, led by Dr. Esha (BDS, MDS).",
 };
 
 const values = [
@@ -52,7 +52,7 @@ export default function AboutPage() {
             Focused, <em className="text-accent">specialist-led</em> care
           </>
         }
-        lede="Excel Dental Clinic & Implant Centre is a dental practice in Sector 21C, Faridabad, led by Dr. Walia (BDS, MDS)."
+        lede="Excel Dental Clinic & Implant Centre is a dental practice in Sector 21C, Faridabad, led by Dr. Esha (BDS, MDS)."
       />
 
       {/* Story */}
@@ -62,8 +62,8 @@ export default function AboutPage() {
             <SectionHeading eyebrow="Our story" title="Why we started Excel Dental" />
             <div className="mt-6 space-y-5 text-[0.95rem] leading-relaxed text-muted">
               <p>
-                Dr. Walia founded Excel Dental after working as a consultant at
-                Clove Dental and Axiss Dental. The aim was simple: a focused
+                Dr. Esha founded Excel Dental after nine years as Clinic Head
+                for Axiss Dental and Clove Dental. The aim was simple: a focused
                 clinic where the specialist who examines you is the one who
                 treats you.
               </p>

@@ -105,7 +105,7 @@ export function Footer() {
             © {new Date().getFullYear()} {site.legalName}. All rights reserved.
           </p>
           <p>
-            Led by Dr. Walia, BDS, MDS
+            Led by Dr. Esha, BDS, MDS
           </p>
         </div>
       </div>

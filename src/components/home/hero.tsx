@@ -61,7 +61,7 @@ export function Hero() {
           >
             <BadgeCheck className="h-5 w-5 shrink-0 text-accent" />
             <p>
-              Led by <span className="font-medium text-foreground">Dr. Walia</span>,
+              Led by <span className="font-medium text-foreground">Dr. Esha</span>,
               BDS, MDS — formerly consultant at Clove Dental &amp; Axiss Dental
             </p>
           </m.div>

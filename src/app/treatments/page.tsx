@@ -78,7 +78,7 @@ export default function TreatmentsPage() {
               title="Everything else your family needs"
             />
           </Reveal>
-          <Stagger className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <Stagger className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {otherServices.map((s) => (
               <StaggerItem key={s.name} className="h-full">
                 <div className="flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-background shadow-sm">
@@ -87,16 +87,21 @@ export default function TreatmentsPage() {
                     alt={s.imageAlt}
                     ratio="aspect-[3/2]"
                     className="rounded-none"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                   <div className="flex flex-1 flex-col p-5">
                     <div className="flex items-center gap-2.5">
                       <s.icon className="h-4.5 w-4.5 shrink-0 text-accent" />
                       <h3 className="font-medium text-foreground">{s.name}</h3>
                     </div>
-                    <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">
+                    <p className="mt-2 text-sm leading-relaxed text-muted">
                       {s.blurb}
                     </p>
+                    {s.description && (
+                      <p className="mt-3 flex-1 text-sm leading-relaxed text-subtle">
+                        {s.description}
+                      </p>
+                    )}
                   </div>
                 </div>
               </StaggerItem>

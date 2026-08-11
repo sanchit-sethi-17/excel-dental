@@ -140,21 +140,24 @@ export default function HomePage() {
               Your dentist
             </p>
             <h2 className="mt-3 font-display text-3xl font-medium tracking-tight text-white sm:text-4xl">
-              Dr. Walia
+              Dr. Esha
             </h2>
             <p className="mt-2 text-sm font-medium uppercase tracking-wider text-stone-400">
               BDS, MDS
             </p>
             <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-stone-300">
-              Dr. Walia leads Excel Dental, with previous experience as a
-              consultant at Clove Dental and Axiss Dental.
+              Dr. Esha leads Excel Dental, with more than 13 years in clinical
+              dentistry and over 5,000 root canals and crowns behind her.
             </p>
             <ul className="mx-auto mt-8 flex max-w-lg flex-wrap justify-center gap-3 text-sm text-stone-300">
               <li className="rounded-full border border-stone-800 bg-stone-900/60 px-4 py-2">
-                Ex-Consultant, Clove Dental
+                13+ years&rsquo; experience
               </li>
               <li className="rounded-full border border-stone-800 bg-stone-900/60 px-4 py-2">
-                Ex-Consultant, Axiss Dental
+                Ex-Clinic Head, Clove Dental
+              </li>
+              <li className="rounded-full border border-stone-800 bg-stone-900/60 px-4 py-2">
+                Ex-Clinic Head, Axiss Dental
               </li>
             </ul>
             <div className="mt-9">

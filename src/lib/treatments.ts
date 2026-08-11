@@ -9,6 +9,7 @@ import {
   Layers,
   ShieldCheck,
   Smile,
+  Sparkle,
   Stethoscope,
   Zap,
 } from "lucide-react";
@@ -43,7 +44,7 @@ export const focusTreatments: Treatment[] = [
     imageAlt: "Dental implant model showing a titanium post and crown",
     excerpt: "A permanent, natural-looking replacement for missing teeth.",
     intro:
-      "A dental implant is a titanium post that replaces the root of a missing tooth, restored with a crown matched to your natural teeth. Implants restore normal function and help preserve the surrounding jawbone.",
+      "A dental implant is a titanium post placed in the jaw to replace the root of a missing tooth, supporting a crown, bridge or denture matched to your natural teeth. Implants are a long-lasting, natural-looking replacement that restores normal function and helps preserve the surrounding jawbone.",
     benefits: [
       "Looks and functions like a natural tooth",
       "Preserves the jawbone after tooth loss",
@@ -100,7 +101,7 @@ export const focusTreatments: Treatment[] = [
     imageAlt: "Dentist carrying out treatment on a patient",
     excerpt: "Removes infection and saves a damaged natural tooth.",
     intro:
-      "Root canal treatment removes infected tissue from inside a tooth to relieve pain and preserve the natural tooth. It is carried out under local anaesthesia using modern rotary instruments.",
+      "Root canal treatment (endodontics) removes infected or damaged pulp from the centre of a tooth, saving it from extraction and restoring its function. It is carried out under local anaesthesia using modern rotary instruments, and is not painful.",
     benefits: [
       "Relieves pain caused by infection",
       "Preserves the natural tooth",
@@ -157,7 +158,7 @@ export const focusTreatments: Treatment[] = [
     excerpt:
       "Braces and clear aligners to straighten teeth and correct the bite.",
     intro:
-      "Orthodontic treatment corrects crowding, spacing and bite problems using fixed braces or clear aligners. A well-aligned bite is easier to keep clean and more comfortable over time.",
+      "Braces and aligners correct crooked, gapped, rotated or crowded teeth. Braces — metal or ceramic — give precise control, while clear aligners are removable trays of medical-grade plastic, custom-fitted to your teeth. A well-aligned bite is easier to keep clean and more comfortable over time.",
     benefits: [
       "Corrects crowding, gaps and bite problems",
       "Fixed braces or discreet clear aligners",
@@ -265,10 +266,22 @@ export type Service = {
   icon: LucideIcon;
   image: string;
   imageAlt: string;
+  /** One-line card copy */
   blurb: string;
+  /** Fuller explanation, shown on the treatments page. Supplied by the clinic. */
+  description?: string;
 };
 
 export const otherServices: Service[] = [
+  {
+    name: "Dental Fillings",
+    icon: Sparkle,
+    image: "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=1600&q=80",
+    imageAlt: "A dentist carrying out a filling",
+    blurb: "Tooth-coloured fillings that repair cavities and decay.",
+    description:
+      "Dental fillings repair cavities by filling in areas of damage or decay. Several materials are available, including amalgam and tooth-coloured options such as composite resin and porcelain. Our emphasis is on composite — aesthetic restorations that match the natural tooth. Depending on the material, a filling can last up to two decades.",
+  },
   {
     name: "Full Mouth Rehabilitation",
     icon: Layers,
@@ -289,6 +302,8 @@ export const otherServices: Service[] = [
     image: "https://images.unsplash.com/photo-1684607632829-1e5bf4f21dab?auto=format&fit=crop&w=1600&q=80",
     imageAlt: "A dental crown model",
     blurb: "Restorations that rebuild damaged teeth and replace gaps.",
+    description:
+      "Crowns and bridges are fixed prosthetic devices. Unlike dentures, which are removable, they are cemented onto existing teeth or implants and can only be removed by a dentist. A crown is fitted over an existing tooth or implant; a bridge replaces a missing tooth.",
   },
   {
     name: "Laser Dentistry",
@@ -305,11 +320,13 @@ export const otherServices: Service[] = [
     blurb: "Gentle preventive and routine care for children.",
   },
   {
-    name: "Tooth Extraction",
+    name: "Wisdom Tooth Removal",
     icon: CircleDot,
     image: "https://images.unsplash.com/photo-1681939282781-341ac4f61996?auto=format&fit=crop&w=1600&q=80",
     imageAlt: "A patient having their teeth examined",
-    blurb: "Safe removal of damaged or impacted teeth, including wisdom teeth.",
+    blurb: "Removal of impacted wisdom teeth, and routine extractions.",
+    description:
+      "Wisdom tooth removal is a common surgical procedure to extract one or more third molars — the four permanent adult teeth at the back corners of the mouth. It is usually advised for impaction, crowding, or a risk of repeated infection. Routine extractions are carried out here too.",
   },
   {
     name: "Gum (Periodontal) Care",
@@ -324,6 +341,8 @@ export const otherServices: Service[] = [
     image: "https://images.unsplash.com/photo-1473232117216-c950d4ef2e14?auto=format&fit=crop&w=1600&q=80",
     imageAlt: "A set of dentures",
     blurb: "Custom full and partial dentures for missing teeth.",
+    description:
+      "Dentures are prosthetic devices that replace missing teeth, supported by the surrounding soft and hard tissues of the mouth. Conventional dentures are removable, but many designs exist — some bond or clasp onto remaining teeth or dental implants.",
   },
 ];
 
