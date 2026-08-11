@@ -29,8 +29,10 @@ export const doctors: Doctor[] = [
     name: "Dr. Esha",
     role: "Founder & Principal Dentist",
     qualification: "BDS, MDS",
-    photo: "/images/team/dr-esha.jpg",
+    photo: "/images/team/dr-esha.png",
     photoAlt: "Dr. Esha at Excel Dental Clinic & Implant Centre",
+    // She sits left of centre in the frame, so hold the crop to the left edge.
+    focus: "object-left",
     summary:
       "13+ years in clinical dentistry. Root canals, crowns, child dentistry and implantology.",
     bio: [
@@ -51,7 +53,7 @@ export const doctors: Doctor[] = [
     name: "Dr. Amit Narang",
     role: "Implantologist",
     qualification: "BDS, Cert. Implantology (Harvard)",
-    photo: "/images/team/dr-amit-narang.jpg",
+    photo: "/images/team/dr-amit-narang.png",
     photoAlt: "Dr. Amit Narang, implantologist at Excel Dental",
     focus: "object-top",
     summary:
@@ -73,7 +75,7 @@ export const doctors: Doctor[] = [
     name: "Dr. Varun Goyal",
     role: "Orthodontist",
     qualification: "BDS, MDS — Orthodontics",
-    photo: "/images/team/dr-varun-goyal.jpg",
+    photo: "/images/team/dr-varun-goyal.png",
     photoAlt: "Dr. Varun Goyal, orthodontist at Excel Dental",
     summary:
       "Professor of Orthodontics with 14+ years' experience. Braces and clear aligners.",
