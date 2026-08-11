@@ -1,6 +1,6 @@
 # Excel Dental — Project Status & Handover
 
-Last updated: 2026-08-02
+Last updated: 2026-08-11
 
 **Client:** Excel Dental Clinic & Implant Centre, Sector 21C, Faridabad
 **Led by:** Dr. Walia (BDS, MDS) — ex-consultant at Clove Dental & Axiss Dental
@@ -92,16 +92,20 @@ while it's parked — restore it first, per `_parked/patient-portal/RESTORE.md`.
 
 *(Not needed while the portal is parked. Kept here for when it comes back.)*
 
-**Step 1 — GitHub.** Create an empty private repo called `excel-dental` (no
-README/gitignore). The code is already committed locally, so just:
+**Step 1 — GitHub. ✅ DONE.** The code is pushed to
+<https://github.com/sanchit-sethi-17/excel-dental> (94 files). Push future work with:
 
 ```bash
-git remote add origin https://github.com/<your-username>/excel-dental.git
-git push -u origin main
+git push
 ```
 
-**Step 2 — Connect Vercel.** Vercel → `excel-dental` project → Settings → Git →
-connect that repo. After this, **every push auto-deploys** (no more manual uploads).
+> ⚠️ **This repo is currently PUBLIC.** It contains client work and this
+> STATUS.md with the cost breakdown. To make it private: GitHub → repo →
+> Settings → General → Danger Zone → Change visibility.
+
+**Step 2 — Connect Vercel. ← NEXT.** Vercel → `excel-dental` project → Settings →
+Git → connect the GitHub repo. After this, **every push auto-deploys** (no more
+manual uploads, which is what caused a failed build and a source/live drift before).
 
 **Step 3 — Free database.** Either Vercel → Storage → Create Postgres, or a free
 DB at <https://neon.tech>. Then add in Vercel → Settings → Environment Variables:
@@ -180,7 +184,14 @@ Before starting, gather:
 
 ## 8. Still pending FROM THE CLIENT
 
-- [ ] Real clinic & team **photos** (licensed stock in use now)
+- [ ] Real clinic **photos** (licensed stock in use for treatments)
+- [ ] **Higher-resolution consultant photos** — the three supplied are only
+      400–450px wide, so Dr. Esha's large portrait is upscaled and looks a
+      little soft. Originals at 800px+ wide would fix it; drop them into
+      `public/images/team/` over the existing files.
+- [ ] **Where Dr. Esha topped her MDS** — her bio says "University topper &
+      Silver Medallist" but the institution name was missing from the text
+      the clinic sent.
 - [ ] Original **logo file** (a clean SVG recreation is in use)
 - [ ] Clinic **email address**
 - [ ] **Confirmed opening hours** — currently placeholders:
@@ -197,7 +208,12 @@ Before starting, gather:
 - ❌ **No AI chatbot on the website** — declined twice
 - ❌ **Not a cosmetic practice** — teeth whitening deliberately excluded; no
   makeover-style messaging or imagery
-- ✅ **"Dr. Walia"** only — no first name, and **no photo of the doctor**
+- ⚠️ **"Dr. Esha"** with a photo — this REVERSES the earlier instruction ("no
+  photo, and not her full name"). The clinic later supplied both her photo and
+  copy naming her "Dr Esha", so the site now uses that throughout. Confirm it
+  was deliberate.
+- ✅ Three consultants on the site: Dr. Esha (principal), Dr. Amit Narang
+  (implantologist), Dr. Varun Goyal (orthodontist)
 - ✅ Copy must be **short, simple, professional** — not flowery or "corny"
 - ✅ Monochrome/understated design with the burnt-orange accent from the logo
 - ✅ Blog + Gallery removed for now
