@@ -82,7 +82,7 @@ set aside for now. Every file was moved intact to
 commands to bring it back (a few file moves + one navbar edit).
 
 The account icon was removed from the navbar, and `/account` no longer exists on
-the site. The public "Book Appointment" form (WhatsApp) is unaffected.
+the site. The public booking flow (section 2a) is separate and unaffected.
 
 It was fully working locally before parking. Features built:
 
