@@ -7,7 +7,11 @@ import { FaqList } from "@/components/faq";
 import { Photo } from "@/components/photo";
 import { Reveal, Stagger, StaggerItem } from "@/components/reveal";
 import { SectionHeading } from "@/components/ui";
+import { UrgentCare } from "@/components/urgent-care";
 import { focusTreatments, getTreatment } from "@/lib/treatments";
+
+/** Treatments people search for while actually in pain. */
+const URGENT_TREATMENTS = new Set(["root-canal-treatment"]);
 
 export function generateStaticParams() {
   return focusTreatments.map((t) => ({ slug: t.slug }));
@@ -134,6 +138,12 @@ export default async function TreatmentPage({
               title="Asked in this chair, answered honestly"
               lede="If your question isn't here, ask us on the phone or at your visit — no question is too small."
             />
+            {URGENT_TREATMENTS.has(treatment.slug) && (
+              <UrgentCare
+                className="mt-10"
+                text="If the pain is bad, don't wait for a reply — call the clinic and we'll do our best to see you the same day."
+              />
+            )}
           </Reveal>
           <Reveal className="lg:col-span-7" delay={0.1}>
             <FaqList faqs={treatment.faqs} />

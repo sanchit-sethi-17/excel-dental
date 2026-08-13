@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
-import { CalendarCheck, Clock, MessageCircle, Phone, Stethoscope } from "lucide-react";
+import { CalendarCheck, Clock, PhoneCall, Stethoscope } from "lucide-react";
 import { PageHero } from "@/components/page-hero";
 import { BookingForm } from "@/components/booking-form";
+import { CallbackForm } from "@/components/callback-form";
 import { CalEmbed } from "@/components/cal-embed";
 import { Reveal } from "@/components/reveal";
+import { UrgentCare } from "@/components/urgent-care";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -16,12 +18,12 @@ const steps = [
   {
     icon: CalendarCheck,
     title: "Send your request",
-    text: "Fill the short form — it opens WhatsApp with everything pre-filled for you to send.",
+    text: "Pick a treatment, a date and a time that suits you. It takes under a minute.",
   },
   {
-    icon: MessageCircle,
+    icon: PhoneCall,
     title: "We confirm your slot",
-    text: "The clinic replies on WhatsApp to confirm your time (or suggest the nearest available).",
+    text: "The clinic calls you to confirm the time, or suggests the nearest one available.",
   },
   {
     icon: Stethoscope,
@@ -74,21 +76,10 @@ export default function BookPage() {
                 ))}
               </ol>
 
-              <div className="mt-10 rounded-2xl bg-panel p-7 text-stone-300">
-                <h3 className="font-display text-lg font-medium text-white">
-                  In pain right now?
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed">
-                  Skip the form — call the clinic directly and we&rsquo;ll do
-                  our best to see you the same day.
-                </p>
-                <a
-                  href={site.phoneHref}
-                  className="mt-5 inline-flex items-center gap-2.5 rounded-full bg-brand px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-brand-deep"
-                >
-                  <Phone className="h-4 w-4" />
-                  {site.phone}
-                </a>
+              <UrgentCare className="mt-10" />
+
+              <div className="mt-6">
+                <CallbackForm />
               </div>
 
               <div className="mt-6 flex items-start gap-3 rounded-2xl border border-line bg-surface p-5 text-sm text-muted">

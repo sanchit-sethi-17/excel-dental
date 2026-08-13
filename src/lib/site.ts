@@ -30,6 +30,19 @@ export const site = {
     { days: "Sunday", time: "By appointment" },
   ],
 
+  /**
+   * The same hours in machine-readable form — this is what the booking form
+   * turns into selectable time slots. Keep it in step with `hours` above.
+   * `days` uses JS weekday numbers (0 = Sunday). Times are 24-hour "HH:MM".
+   */
+  openingBlocks: [
+    { days: [1, 2, 3, 4, 5, 6], start: "10:00", end: "14:00" },
+    { days: [1, 2, 3, 4, 5, 6], start: "17:00", end: "20:30" },
+  ] as { days: number[]; start: string; end: string }[],
+
+  /** Sundays are by arrangement only, so the form asks people to call. */
+  closedNote: "Sundays are by appointment only — please call the clinic.",
+
   maps: {
     embedSrc:
       "https://maps.google.com/maps?q=" +

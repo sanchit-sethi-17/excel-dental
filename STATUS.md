@@ -1,6 +1,6 @@
 # Excel Dental — Project Status & Handover
 
-Last updated: 2026-08-11
+Last updated: 2026-08-13
 
 **Client:** Excel Dental Clinic & Implant Centre, Sector 21C, Faridabad
 **Led by:** Dr. Esha (BDS, MDS) — ex-Clinic Head at Axiss Dental & Clove Dental
@@ -26,11 +26,53 @@ The marketing website is deployed and working:
 - **Consultants page** with all three doctors, photos, bios and credentials
 - **Dark mode** — sun/moon toggle in the navbar, follows the visitor's system
   setting, remembers their choice, no flash on load
-- **Booking (current live method):** a form that opens WhatsApp with the request
-  pre-filled to +91 98103 09132
+- **Booking** — see section 2a below
 - Google Maps embed, reviews section, SEO metadata + business schema + sitemap
 - Blog and Gallery pages were **removed** at client request (code kept dormant,
   easy to restore)
+
+## 2a. Booking — how it works now
+
+Rebuilt 2026-08-13. Previously the form only opened WhatsApp, so **if the
+patient didn't press send, the clinic never learned they existed.** Now:
+
+1. The patient fills the form — **name, mobile and a real time slot are
+   required** (mobile used to be optional).
+2. On submit the request is **saved on the server first**: validated, given a
+   reference like `ED-7K3QP`, written to the server log, and **emailed to the
+   clinic**.
+3. WhatsApp still opens as a convenience, pre-filled and carrying the reference.
+4. The patient sees a confirmation with the reference, a summary, and an
+   **"Add to calendar"** file that includes a reminder alarm the day before.
+
+Also on the booking page:
+- **"Request a callback"** — just name + mobile, for people who won't fill a form
+- **"In pain right now?"** — a direct call panel (also on the root canal page)
+
+Real time slots are generated from `openingBlocks` in `src/lib/site.ts`
+(10:00–13:30 and 17:00–20:00, in 30-min steps). Sundays are blocked with a
+"please call" note. Past times are hidden when booking for today.
+
+> ### ⚠️ ONE THING TO SET BEFORE LAUNCH
+> Requests are **not emailed** until these are set in Vercel → Settings →
+> Environment Variables:
+>
+> | Variable | Value |
+> | --- | --- |
+> | `CLINIC_EMAIL` | where requests should go |
+> | `RESEND_API_KEY` | free key from <https://resend.com> |
+> | `BOOKING_FROM_EMAIL` | *(optional)* sender on a verified domain |
+>
+> Until then requests are still validated and written to the Vercel logs, and
+> WhatsApp still works — but **nothing lands in an inbox**, so set these.
+
+**Not built:** an automated day-before SMS/WhatsApp reminder. That needs stored
+appointments plus a paid SMS/WhatsApp provider. The calendar file's own alarm
+covers most of the benefit for free.
+
+**Key files:** `src/app/book/actions.ts` (server action), `src/lib/notify.ts`
+(email), `src/lib/slots.ts` (times), `src/lib/booking-requests.ts` (validation),
+`src/components/{booking-form,callback-form,urgent-care}.tsx`.
 
 ## 2. Patient Portal — BUILT, then PARKED (2026-08-02)
 
